@@ -78,19 +78,19 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-          child: ListView.separated(
-            padding: const EdgeInsets.all(8),
-            itemCount: entries.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Container(
-                height: 50,
-                color: Colors.amber[colorCodes[index]],
-                child: Center(child: Text('List ${entries[index]}')),
-              );
-            },
-            separatorBuilder: (BuildContext context, int index) => const Divider(),
-          ),
+        child: ListView.separated(
+          padding: const EdgeInsets.all(8),
+          itemCount: entries.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+              height: 50,
+              color: Colors.amber[colorCodes[index]],
+              child: Center(child: Text('List ${entries[index]}')),
+            );
+          },
+          separatorBuilder: (BuildContext context, int index) => const Divider(),
+        ),
       ),
-      );
+    );
   }
 }
