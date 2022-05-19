@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,6 +52,10 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+
+
+
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -65,10 +70,18 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final List<String> items = <String>['第一項', '第二項', '第三項'];
-    const  icons = <String>['assets/1.png', 'assets/2.png', 'assets/3.png'];
+    const icons = <String>['assets/1.png', 'assets/2.png', 'assets/3.png'];
     var listView=ListView.separated(
         itemBuilder: (context, index) => Card(
           child: ListTile(title: Text(items[index],style: TextStyle(fontSize: 24),),
+          onTap: ()=>Fluttertoast.showToast(
+              msg: "點選"+items[index],
+              toastLength: Toast.LENGTH_SHORT,
+              gravity: ToastGravity.CENTER,
+              backgroundColor: Colors.white12,
+              textColor: Colors.black,
+              fontSize: 20.0
+          ),
           leading: Container(
             child:CircleAvatar(backgroundImage: AssetImage(icons[index]),),
             padding: EdgeInsets.symmetric(vertical: 8,horizontal: 5),
