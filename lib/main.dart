@@ -69,11 +69,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> items = <String>['第一項', '第二項', '第三項'];
-    const icons = <String>['assets/1.png', 'assets/2.png', 'assets/3.png'];
+    final List<String> items = <String>['貓咪', '狗狗', '倉鼠','龍貓', '天竺鼠', '獅子','馬', '兔子', '鸚鵡'];
+    final List<String> sec = <String>['meow', 'bow-wow', '啾啾','唧唧', 'PUIPUI', '吼','嘶嘶', '咕咕', '吱吱'];
     var listView=ListView.separated(
         itemBuilder: (context, index) => Card(
-          child: ListTile(title: Text(items[index],style: TextStyle(fontSize: 24),),
+          child: ListTile(title: Text(items[index],style: TextStyle(fontSize: 22),),
           onTap: ()=>Fluttertoast.showToast(
               msg: "點選"+items[index],
               toastLength: Toast.LENGTH_SHORT,
@@ -83,10 +83,10 @@ class _MyHomePageState extends State<MyHomePage> {
               fontSize: 20.0
           ),
           leading: Container(
-            child:CircleAvatar(backgroundImage: AssetImage(icons[index]),),
+            child:Icon(Icons.ac_unit_outlined),
             padding: EdgeInsets.symmetric(vertical: 8,horizontal: 5),
           ),
-            subtitle: Text('項目說明',style: TextStyle(fontSize: 16),),
+            subtitle: Text(sec[index],style: TextStyle(fontSize: 16),),
           ),
         ),
         itemCount: items.length,
